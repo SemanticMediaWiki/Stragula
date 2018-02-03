@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<?xml-model href="https://cmln.github.io/chameleon/schema/1.0/layout.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+This file is part of the MediaWiki Chameleon skin and serves its Stragula flavour.
+
+@copyright 2013 - 2016, Stephan Gambke
+@license   GNU General Public License, version 3 (or any later version)
+
+The Chameleon skin is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+The Chameleon skin is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <http://www.gnu.org/licenses/>.
+
+@author Stephan Gambke
+@since 1.0
+@ingroup Skins
+-->
+<structure xmlns="https://cmln.github.io/chameleon/schema/1.0/layout.rng">
+
+	<component type="NavbarHorizontal">
+
+		<modification type="Sticky"/>
+
+		<component type="Logo" position="head"/>
+
+		<component type="NavMenu" flatten="navigation" showTools="no" showLanguages="no"/>
+
+		<component type="PageTools" position="right" hideSelectedNameSpace="yes"/>
+
+		<component type="SearchBar" position="right" buttons="search"/>
+
+		<component type="PersonalTools" position="right"/>
+
+	</component>
+
+	<grid class="smwomaingrid">
+
+		<row>
+
+			<cell span="12">
+
+				<component type="SiteNotice"/>
+
+			</cell>
+
+		</row>
+
+		<row>
+
+			<cell span="12">
+
+				<component type="MainContent"/>
+
+			</cell>
+
+		</row>
+
+	</grid>
+
+	<grid class="smwofootergrid">
+
+		<row class="smwofooterrowtb">
+
+			<cell span="1">
+
+				<component type="container" class="footer"/>
+
+			</cell>
+
+			<cell span="10" class="smwofootercomptb">
+
+				<component type="ToolbarHorizontal" hideTools="no" hideLanguages="yes"/>
+
+			</cell>
+
+			<cell span="1">
+
+				<component type="container" class="footer"/>
+
+			</cell>
+
+		</row>
+
+		<row class="smwofooterrow">
+
+			<cell span="1">
+
+				<component type="container" class="footer"/>
+
+			</cell>
+
+			<cell span="10">
+
+				<component type="FooterInfo"/>
+
+			</cell>
+
+			<cell span="1">
+
+				<component type="container" class="footer"/>
+
+			</cell>
+		</row>
+
+		<row class="smwofooterrow">
+
+
+			<cell span="1">
+
+				<component type="container" class="footer"/>
+
+			</cell>
+
+			<cell span="6">
+
+				<component type="FooterPlaces"/>
+
+			</cell>
+
+			<cell span="4">
+
+				<component type="FooterIcons"/>
+
+			</cell>
+
+			<cell span="1">
+
+				<component type="container" class="footer"/>
+
+			</cell>
+
+		</row>
+
+	</grid>
+
+</structure>
