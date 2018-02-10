@@ -3,6 +3,16 @@
 // C - Karsten Hoffmeyer 2017
 // -----------------------------------------------------
 
+// Colors
+
+@navbar-default-bg: #5e9dc8;
+@nav-tabs-active-link-hover-color: #ffffff;
+
+@btn-default-bg: #5e9dc8;
+@btn-default-border: @btn-default-bg;
+
+@btn-default-focus-bg: #3e85b5;
+@btn-default-focus-border: @btn-default-focus-bg;
 
 /* general - enforce a minimum height on every screen */
 
@@ -10,7 +20,7 @@ html,
 body {
 	height: 100%;
 	margin: 0;
-	padding:0;
+	padding: 0;
 }
 
 .smwomaingrid {
@@ -31,80 +41,127 @@ hr {
 }
 
 /* navbar */
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-	color: #fff;
-	background-color: #458ec0;
+.navbar-default .navbar-nav > li > a {
+	&:hover,
+	&:focus {
+		color: #ffffff;
+		background-color: #458ec0;
+	}
 }
 
 a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
-	color: #fff;
+	color: #ffffff;
 }
 
 /* navbar - search button */
-.btn-default {
-	background-color: #5e9dc8;
-	border-color: #5e9dc8;
-}
 
-.btn-default:hover {
-	background-color: #3e85b5;
-	border-color: #3e85b5;
+.btn-default {
+
+	@color: @btn-default-color;
+
+	color: @color;
+	background-color: @btn-default-bg;
+	border-color: @btn-default-border;
+
+	&:focus,
+	&.focus,
+	&:hover {
+		color: @color;
+		background-color: @btn-default-focus-bg;
+		border-color: @btn-default-focus-border;
+	}
+	&:active,
+	&.active,
+	.open > .dropdown-toggle {
+		color: @color;
+		background-color: @btn-default-focus-bg;
+		border-color: @btn-default-focus-border;
+
+		&:hover,
+		&:focus,
+		&.focus {
+			color: @color;
+			background-color: darken(@btn-default-focus-bg, 6%);
+			border-color: darken(@btn-default-focus-border, 12%);
+		}
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus,
+		&.focus {
+			background-color: @btn-default-bg;
+			border-color: @btn-default-border;
+		}
+	}
+
+	.badge {
+		color: @btn-default-bg;
+		background-color: @color;
+	}
 }
 
 /* navbar - dropdown */
-.navbar .dropdown-menu > li > a {
-	background-color: #fff;
-}
+.navbar .dropdown-menu > li {
+	> a {
+		background-color: #ffffff;
 
-.navbar .dropdown-menu > li > a:hover,
-.navbar .dropdown-menu > li > a:focus {
-	text-decoration: underline;
-	text-decoration-color: #5e9dc8;
-}
+		&:hover, &:focus {
+			text-decoration: underline;
+			text-decoration-color: #5e9dc8;
+		}
+	}
 
-.navbar .dropdown-menu > li.active > a,
-.navbar .dropdown-menu > li.selected > a {
-	background-color: #fff;
-	color: #5e9dc8;
-	text-decoration: underline;
-	text-decoration-color: #5e9dc8;
+	&.active > a,
+	&.selected > a {
+		background-color: #ffffff;
+		color: #5e9dc8;
+		text-decoration: underline;
+		text-decoration-color: #5e9dc8;
+	}
 }
 
 /* navbar - dropdown - narrow screen */
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
 	color: #5e9dc8;
-	background-color: #fff;
-}
+	background-color: #ffffff;
 
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-	color: #3e85b5;
-	background-color: #fff;
+	&:hover,
+	&:focus {
+		color: #3e85b5;
+		background-color: #ffffff;
+	}
 }
 
 /* navbar - personal tools - wide screen and narrow screen */
-.skin-chameleon .navbar-tools .open > a,
-.skin-chameleon .navbar-tools .open > a:hover, 
-.skin-chameleon .navbar-tools .open > a:focus {
-	background-color: #3e85b5;
-}
+.skin-chameleon .navbar-tools {
+	.open > a {
+		&,
+		&:hover,
+		&:focus {
+			background-color: #3e85b5;
+		}
+	}
 
-.skin-chameleon .navbar-tools > li > a.navbar-userloggedin:active,
-.skin-chameleon .navbar-tools > li.open > a.navbar-userloggedin:active {
-	color: #458ec0;
-}
+	> li,
+	> li.open {
+		> a.navbar-userloggedin {
 
-.skin-chameleon .navbar-tools > li > a.navbar-userloggedin:hover,
-.skin-chameleon .navbar-tools > li.open > a.navbar-userloggedin:hover {
-	background-color: #458ec0;
-}
+			&:active {
+				color: #458ec0;
+			}
 
-.skin-chameleon .navbar-tools > li > a.navbar-userloggedin:focus,
-.skin-chameleon .navbar-tools > li.open > a.navbar-userloggedin:focus {
-	background-color: #3e85b5;
-}
+			&:hover {
+				background-color: #458ec0;
+			}
 
+			&:focus {
+				background-color: #3e85b5;
+			}
+		}
+	}
+}
 
 /* navbar - personal tools -universal language selector */
 
@@ -113,63 +170,70 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 }
 
 #pt-uls.active a {
-	background-color: #fff;
+	background-color: #ffffff;
 	color: #5e9dc8;
 	text-decoration: none;
-}
 
-#pt-uls.active a:hover,
-#pt-uls.active a:focus {
-	color: #3e85b5;
-	text-decoration: underline;
-	text-decoration-color: #5e9dc8;
-	background-image: linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2227%22%20height%3D%2216%22%3E%3Cpath%20fill%3D%22%23D3E3F4%22%20d%3D%22M0%200h11.876v16h-11.876v-16z%22%2F%3E%3Cpath%20fill%3D%22%23E9E9E9%22%20d%3D%22M12.819%200v15.969h10.755c1.085-2.578%201.837-4.991%203.062-8.591l-3.062-7.378h-10.755z%22%2F%3E%3Cpath%20fill%3D%22%23434343%22%20d%3D%22M14.828%204.146c.32.023.639.035.951.035.471%200%20.922-.016%201.354-.046l.023-.258.034-.367.081-.711.033-.333.873.058c-.073.577-.133%201.091-.179%201.542%201.116-.119%202.233-.331%203.349-.637l.092.809c-1.078.271-2.251.472-3.521.602-.05.463-.082.968-.098%201.514.524-.187%201.14-.313%201.847-.378.064-.207.136-.461.213-.763l.865.201c-.027.123-.088.315-.184.579.814.104%201.461.34%201.938.711.681.542%201.021%201.252%201.021%202.128%200%20.963-.406%201.746-1.221%202.351-.635.47-1.505.784-2.609.94l-.505-.779c.968-.104%201.739-.337%202.317-.7.733-.458%201.101-1.066%201.101-1.823%200-.772-.341-1.363-1.021-1.772-.345-.21-.764-.344-1.256-.401-.604%201.422-1.4%202.598-2.387%203.527.035.352.102.715.201%201.09l-.849.314-.126-.773c-.654.462-1.27.693-1.847.693-.696%200-1.044-.407-1.044-1.222%200-1.104.591-2.103%201.771-2.993.227-.165.532-.352.918-.562.012-.524.046-1.128.104-1.812-.585.046-1.143.069-1.675.069l-.493-.011-.071-.822m2.127%203.384c-.268.161-.545.392-.831.694-.612.619-.94%201.226-.986%201.817l-.017.121.017.138c0%20.252.112.378.339.378.492%200%201.02-.258%201.582-.773-.057-.613-.092-1.404-.104-2.375m2.455-.884c-.57.08-1.111.226-1.623.436%200%20.883.018%201.581.052%202.093.634-.707%201.158-1.55%201.571-2.529%22%2F%3E%3Cpath%20fill%3D%22%231A1A1A%22%20d%3D%22M8.517%2011.735l-.734-2.409h-3.69l-.734%202.409h-2.313l3.573-10.165h2.625l3.587%2010.165h-2.314m-1.246-4.21c-.679-2.183-1.062-3.418-1.149-3.704-.083-.286-.143-.512-.18-.678-.153.59-.589%202.051-1.309%204.382h2.638%22%2F%3E%3Cpath%20fill%3D%22%23BCBCBC%22%20d%3D%22M12.817%2013.5v2.5h10.757l.98-2.5h-11.737z%22%2F%3E%3Cpath%20fill%3D%22%233692D0%22%20d%3D%22M.011%2013.511h3.569l2.367-3.116%202.367%203.116h3.57v2.484h-11.873v-2.484z%22%2F%3E%3C%2Fsvg%3E) !important;
+	&:hover,
+	&:focus {
+		color: #3e85b5;
+		text-decoration: underline;
+		text-decoration-color: #5e9dc8;
+		background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2227%22%20height%3D%2216%22%3E%3Cpath%20fill%3D%22%23D3E3F4%22%20d%3D%22M0%200h11.876v16h-11.876v-16z%22%2F%3E%3Cpath%20fill%3D%22%23E9E9E9%22%20d%3D%22M12.819%200v15.969h10.755c1.085-2.578%201.837-4.991%203.062-8.591l-3.062-7.378h-10.755z%22%2F%3E%3Cpath%20fill%3D%22%23434343%22%20d%3D%22M14.828%204.146c.32.023.639.035.951.035.471%200%20.922-.016%201.354-.046l.023-.258.034-.367.081-.711.033-.333.873.058c-.073.577-.133%201.091-.179%201.542%201.116-.119%202.233-.331%203.349-.637l.092.809c-1.078.271-2.251.472-3.521.602-.05.463-.082.968-.098%201.514.524-.187%201.14-.313%201.847-.378.064-.207.136-.461.213-.763l.865.201c-.027.123-.088.315-.184.579.814.104%201.461.34%201.938.711.681.542%201.021%201.252%201.021%202.128%200%20.963-.406%201.746-1.221%202.351-.635.47-1.505.784-2.609.94l-.505-.779c.968-.104%201.739-.337%202.317-.7.733-.458%201.101-1.066%201.101-1.823%200-.772-.341-1.363-1.021-1.772-.345-.21-.764-.344-1.256-.401-.604%201.422-1.4%202.598-2.387%203.527.035.352.102.715.201%201.09l-.849.314-.126-.773c-.654.462-1.27.693-1.847.693-.696%200-1.044-.407-1.044-1.222%200-1.104.591-2.103%201.771-2.993.227-.165.532-.352.918-.562.012-.524.046-1.128.104-1.812-.585.046-1.143.069-1.675.069l-.493-.011-.071-.822m2.127%203.384c-.268.161-.545.392-.831.694-.612.619-.94%201.226-.986%201.817l-.017.121.017.138c0%20.252.112.378.339.378.492%200%201.02-.258%201.582-.773-.057-.613-.092-1.404-.104-2.375m2.455-.884c-.57.08-1.111.226-1.623.436%200%20.883.018%201.581.052%202.093.634-.707%201.158-1.55%201.571-2.529%22%2F%3E%3Cpath%20fill%3D%22%231A1A1A%22%20d%3D%22M8.517%2011.735l-.734-2.409h-3.69l-.734%202.409h-2.313l3.573-10.165h2.625l3.587%2010.165h-2.314m-1.246-4.21c-.679-2.183-1.062-3.418-1.149-3.704-.083-.286-.143-.512-.18-.678-.153.59-.589%202.051-1.309%204.382h2.638%22%2F%3E%3Cpath%20fill%3D%22%23BCBCBC%22%20d%3D%22M12.817%2013.5v2.5h10.757l.98-2.5h-11.737z%22%2F%3E%3Cpath%20fill%3D%22%233692D0%22%20d%3D%22M.011%2013.511h3.569l2.367-3.116%202.367%203.116h3.57v2.484h-11.873v-2.484z%22%2F%3E%3C%2Fsvg%3E) !important;
+	}
 }
 
 /* navbar - personal tools - liquid threads */
 
-#pt-newmessages a {
-	background-color: #fff;
-	color: #5e9dc8;
-}
+#pt-newmessages {
+	a {
+		background-color: #ffffff;
+		color: #5e9dc8;
 
-#pt-newmessages a:hover,
-#pt-newmessages a:focus {
-	text-decoration: underline;
-	text-decoration-color: #5e9dc8;
-}
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			text-decoration-color: #5e9dc8;
+		}
+	}
 
-#pt-newmessages.active a {
-	background-color: #fff;
-	color: #5e9dc8;
-	font-weight: 900;
-}
+	&.active a {
 
-#pt-newmessages.active a:hover,
-#pt-newmessages.active a:focus {
-	color: #3e85b5;
-	text-decoration: underline;
-	text-decoration-color: #5e9dc8;
+		// FIXME: Colors should already be covered by #pt-newmessages a
+		background-color: #ffffff;
+		color: #5e9dc8;
+
+		font-weight: 900;
+
+		&:hover,
+		&:focus {
+			color: #3e85b5;
+
+			// FIXME: Should already be covered by #pt-newmessages a
+			text-decoration: underline;
+			text-decoration-color: #5e9dc8;
+		}
+	}
 }
 
 /* Echo - navbar - personal tools */
-#pt-notifications-alert .mw-echo-notifications-badge:hover,
-#pt-notifications-message .mw-echo-notifications-badge:hover,
-#pt-notifications-alert .mw-echo-notifications-badge:active,
-#pt-notifications-message .mw-echo-notifications-badge:active,
-#pt-notifications-alert .mw-echo-notifications-badge:focus,
-#pt-notifications-message .mw-echo-notifications-badge:focus {
-	outline: none;
-	-moz-outline-style: none;
-	background-color: #fff;
-	color: #3e85b5;
-	text-decoration: underline;
-	text-decoration-color: #5e9dc8;
-}
+#pt-notifications-alert,
+#pt-notifications-message {
+	.mw-echo-notifications-badge {
 
-#pt-notifications-alert .mw-echo-notifications-badge,
-#pt-notifications-message .mw-echo-notifications-badge {
-	font-weight: normal !important;
+		&:hover,
+		&:active,
+		&:focus {
+			-moz-outline-style: none;
+			outline: none;
+			background-color: #ffffff;
+			color: #3e85b5;
+			text-decoration: underline;
+			text-decoration-color: #5e9dc8;
+		}
+
+		font-weight: normal !important;
+	}
 }
 
 #pt-notifications-message .mw-echo-notifications-badge {
@@ -205,7 +269,6 @@ ul.lqt-thread-toolbar-commands {
 }
 */
 
-
 /* buttons */
 .dropbtn {
 	color: #5e9dc8;
@@ -220,22 +283,27 @@ ul.lqt-thread-toolbar-commands {
 	break-inside: avoid-column;
 }
 
-.dropdown-content a {
-	background-color: #fff !important;
-	color: #5e9dc8 !important;
+.dropdown-content {
+	a {
+		background-color: #ffffff !important;
+		color: #5e9dc8 !important;
+	}
+
+	&:hover,
+	&:focus {
+		color: #3e85b5 !important;
+		text-decoration: underline !important;
+		text-decoration-color: #5e9dc8 !important;
+	}
 }
 
-.dropdown-content a:hover,
-.dropdown-content a:focus, {
-	color: #3e85b5 !important;
-	text-decoration: underline !important;
-	text-decoration-color: #5e9dc8 !important;
-}
-
-.srf-tree ul li ul,
-.srf-tree ul li ul li ul {
-	list-style-type: none !important;
-	list-style-image: none !important;
+// FIXME: .srf-tree should be handled in SRF
+.srf-tree ul li ul {
+	&,
+	li ul {
+		list-style-type: none !important;
+		list-style-image: none !important;
+	}
 }
 
 /* other */
@@ -249,7 +317,6 @@ table a:not(.btn),
 .hproduct table tbody tr td {
 	padding: 2px;
 }
-
 
 /* footer */
 
@@ -278,23 +345,23 @@ table a:not(.btn),
 	margin-left: 10px;
 }
 
-
 /**
  * general page styles
  */
 
 /* table of contents */
-#toc #toctitle,
-.toc #toctitle,
-#toc .toctitle,
-.toc .toctitle {
-	text-align: left !important;
+#toc, .toc {
+	#toctitle, .toctitle {
+		text-align: left !important;
+	}
 }
 
-#preftoc > li.selected > a,
-#preftoc > li.selected > a:hover,
-#preftoc > li.selected > a:focus {
-	color: #3e85b5;
+#preftoc > li.selected > a {
+	&,
+	&:hover,
+	&:focus {
+		color: #3e85b5;
+	}
 }
 
 /* pre */
