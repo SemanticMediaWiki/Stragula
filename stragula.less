@@ -390,3 +390,279 @@ div.smwpre {
 	margin-top: 10px;
 	padding: 2px 0;
 }
+
+/** 
+ * Currently less less
+ */
+/* A table/box theme V2 */
+
+table.smworgtable-v2 {
+	background: #5e9dc8;
+	border: 1px solid #5e9dc8;
+	margin: 0 0 0.5em 1em;
+	padding: 0;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+ 
+table.smworgtable-v2 tr {
+	background: #fff;
+}
+ 
+table.smworgtable-v2 td {
+	padding: 5px;
+        vertical-align: top !important;
+}
+ 
+table.smworgtable-v2 th {
+	background: #5e9dc8;
+	border: 0px;
+	padding: 3px;
+	font-size: 100%;
+	font-weight: normal;
+	font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+	color: #fff;
+        vertical-align: top !important;
+}
+ 
+table.smworgtable-v2 th.smworange {
+	background: #d57520;
+}
+ 
+table.smworgtable-v2 th a {
+	color: #fff;
+}
+ 
+table.smworgtable-v2-toc th a {
+	color: #0C2C52;
+}
+ 
+#smworgtable-v2-toc #toc.toc {
+	text-indent: -15px;
+	margin-left: 15px;
+}
+
+#smworgtable-v2-toc #toc {
+	border: 0px solid #aaa;
+	background-color: #fff;
+	font-size: 100%;
+	width: 230px;
+} 
+#smworgtable-v2-toc.smworgtable-v2-toc th a {
+	color: #5E9DC8;
+}
+ 
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: right;
+}
+ 
+#smworgtable-v2-toc #toc.toc {
+	font-size: 110%;
+}
+ 
+#toc h2,
+.toc h2 {
+	display: none;
+}
+ 
+#toc .toctoggle,
+.toc .toctoggle {
+	text-align: right !important;
+}
+
+.float-left {
+    float:left;
+}
+
+.float-right {
+    float:right;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #DCF0F7;
+    color: #5e9dc8;
+    padding: 3px 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: right;
+    color: #164eaf;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-outer {
+    min-width: 160px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0px;
+    left: auto;
+    right: 0;
+    border-top: 5px solid #5e9dc8;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #164eaf;
+    padding: 3px 6px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    min-width: 150px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #DCF0F7;
+    color: #5e9dc8;
+}
+
+.dropdown-content .selflink,
+.dropdown-content .selflink:hover {
+    background-color: #48c4f5;
+    color: #fff;
+    margin-left: 6px;
+    padding: 5px;
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0 10px 0 10px;
+    padding: 0 0 0 0;
+}
+
+.dropdown-content li {
+    padding: 0 0 0 0;
+}
+
+.dropdown-content li a:hover {
+    background-color: #fff;
+    color: #5e9dc8;
+    text-decoration: underline;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #5e9dc8;
+    color: #fff;
+}
+
+/**
+ * Document management specific changes
+ */
+
+.dropdown .dropbtn.document-draft {
+    background-color: #f7d96d;
+    color: #725b06;
+}
+
+.dropdown:hover .dropbtn.document-draft {
+    background-color: #f3c624;
+    color: #725b06;
+}
+
+.dropdown-content.document-draft {
+    border-top: 5px solid #f3c624;
+}
+
+.dropdown .dropbtn.document-obsolete {
+    background-color: #ff5656;
+    color: #510e1c;
+}
+
+.dropdown:hover .dropbtn.document-obsolete {
+    background-color: #f30000;
+    color: #510e1c;
+}
+
+.dropdown-content.document-obsolete {
+    border-top: 5px solid #f30000;
+}
+
+/**
+ * Manual specific changes
+ */
+.user-manual {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    -moz-column-rule-style: solid; /* Firefox */
+    column-rule-style: solid;
+    -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
+    -moz-column-rule-width: 1px; /* Firefox */
+    column-rule-width: 1px;
+    -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid lightblue; /* Firefox */
+    column-rule: 1px solid lightblue;
+}
+
+.admin-manual {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    -moz-column-rule-style: solid; /* Firefox */
+    column-rule-style: solid;
+    -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
+    -moz-column-rule-width: 1px; /* Firefox */
+    column-rule-width: 1px;
+    -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid lightblue; /* Firefox */
+    column-rule: 1px solid lightblue;
+}
+/**
+ * Navigation support
+ */
+.manual-nav {
+    margin-top: 5px;
+}
+
+.manual-nav a {
+    background-color: #DCF0F7;
+    color: #5e9dc8;
+    padding: 3px 3px 3px 9px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    text-align: right;
+    color: #164eaf;
+    width: 15px;
+    text-align: center;
+    color: #164eaf;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.manual-nav:hover,
+.manual-nav a:hover {
+    background-color: #5e9dc8;
+    color: #fff;
+    border-radius: 3px;
+}
+
