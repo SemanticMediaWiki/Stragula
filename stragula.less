@@ -16,15 +16,14 @@
 
 /* general - enforce a minimum height on every screen */
 
-html,
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+html {
+	position: relative;
+	min-height: 100%;
 }
 
-.smwomaingrid {
-	min-height: 65%;
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 185px;
 }
 
 /* fix gap between header and content */
@@ -319,9 +318,12 @@ table a:not(.btn),
 }
 
 /* footer */
-
 .smwofootergrid.container {
-	width: 100%;
+	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	/* Set the fixed height of the footer here */
+  	height: 185px;
 }
 
 .smwofooterrowtb.row {
