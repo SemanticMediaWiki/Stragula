@@ -23,4 +23,7 @@ $egChameleonExternalLessVariables = [
 	'navbar-default-border' => 'rgba( 94, 157, 200, 1 )',
 	'nav-tabs-active-link-hover-color' => 'rgba( 255, 255, 255, 1 )',
 	];
+
+## Default skin (optional)
+$wgDefaultSkin = 'chameleon';
 ```
