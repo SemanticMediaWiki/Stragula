@@ -620,10 +620,18 @@ table.smworgtable-v2-toc {
     border-top: 5px solid #5e9dc8;
 }
 
+@media only screen and (max-width: 480px) {
+	.dropdown-content {
+		left: -100% !important;
+		right: auto !important;
+		column-gap: 0px !important;
+	}
+}
+
 /* Links inside the dropdown */
 .dropdown-content a {
     color: #164eaf;
-    padding: 3px 6px;
+    padding: 3px 3px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -736,6 +744,7 @@ table.smworgtable-v2-toc {
     -moz-column-rule: 1px solid lightblue; /* Firefox */
     column-rule: 1px solid lightblue;
 }
+
 /**
  * Navigation support
  */
