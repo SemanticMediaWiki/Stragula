@@ -110,12 +110,12 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
 			</cell>
 		</row>
 
-		<row class="smwofooterrow">
+		<row class="smwofooterrowb">
 
 
 			<cell span="1">
 
-				<component type="container" class="footer"/>
+				<component type="container" class="footerb"/>
 
 			</cell>
 
@@ -133,7 +133,7 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
 
 			<cell span="1">
 
-				<component type="container" class="footer"/>
+				<component type="container" class="footerb"/>
 
 			</cell>
 

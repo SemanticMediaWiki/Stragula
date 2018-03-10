@@ -11,6 +11,12 @@
 @color3: #3e85b5;
 @color4: #458ec0;
 @color5: #dcf0f7;
+@color6: #f7d96d;
+@color7: #f3c624;
+@color8: #ff5656;
+@color9: #f30000;
+@color10: #725b06;
+@color11: #510e1c;
 
 @navbar-default-bg: @color2;
 @nav-tabs-active-link-hover-color: @color0;
@@ -36,7 +42,7 @@ html {
 
 body {
 	/* Margin bottom by footer height see also ".smwofootergrid.container" */
-	margin-bottom: 145px;
+	margin-bottom: 125px;
 }
 
 /* fix gap between header and content */
@@ -108,30 +114,133 @@ table a:not(.btn),
  * buttons
  */
 .dropbtn {
+	background-color: @color5;
 	color: @color2;
+	padding: 3px 6px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	text-align: right;
 	border-radius: 0 !important;
 }
 
-.dropdown-content ul {
-	margin: 0 0 0 10px !important;
-	-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-	page-break-inside: avoid; /* Firefox */
-	break-inside: avoid; /* IE 10+ */
-	break-inside: avoid-column;
-}
+/**
+ * dropdown buttons
+ */
 
-.dropdown-content {
-	a {
-		background-color: @color0 !important;
-		color: @color2 !important;
-
-		&:hover,
-		&:focus {
-			color: @color3 !important;
-			text-decoration: underline !important;
-			text-decoration-color: @color2 !important;
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	&:hover {
+		/* Show the dropdown menu on hover */
+		.dropdown-content {
+			display: block;
+		}
+		/* Change the background color of the dropdown button when the dropdown content is shown */
+		.dropbtn {
+			background-color: @color2;
+			color: @color0;
+		}
+		.dropbtn.document-draft {
+			background-color: @color7;
+			color: @color10;
+		}
+		.dropbtn.document-obsolete {
+			background-color: @color9;
+			color: @color11;
 		}
 	}
+	.dropbtn.document-draft {
+		background-color: @color6;
+		color: @color10;
+	}
+	.dropbtn.document-obsolete {
+		background-color: @color8;
+		color: @color11;
+	}
+}
+.dropdown-outer {
+	min-width: 160px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	font-size: 14px;
+	background-color: @color0;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border-radius: 0px;
+	left: auto;
+	right: 0;
+	border-top: 5px solid @color2;
+	/* Links inside the dropdown */
+	a {
+		background-color: @color0;
+		color: @color2;
+		padding: 3px 3px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+		min-width: 150px;
+		/* Change color of dropdown links on hover */
+		&:hover,
+		&:focus {
+			color: @color3;
+			text-decoration: underline;
+			text-decoration-color: @color2;
+		}
+	}
+	.selflink {
+		background-color: @color0;
+		color: @brand-primary;
+		margin-left: 6px;
+		padding: 5px;
+		&:hover {
+			background-color: @color0;
+			color: @color2;
+			margin-left: 6px;
+			padding: 5px;
+		}
+	}
+	ul {
+		list-style-type: none;
+		list-style-image: none;
+		margin: 0 0 0 10px;
+		padding: 0 0 0 0;
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid; /* IE 10+ */
+		break-inside: avoid-column;
+	}
+	li {
+		padding: 0 0 0 0;
+		a {
+			&:hover {
+				background-color: @color0;
+				color: @color2;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.dropdown-content {
+		left: -100% !important;
+		right: auto !important;
+		column-gap: 0px !important;
+	}
+}
+
+/* Document management specific changes */
+.dropdown-content.document-draft {
+	border-top: 5px solid @color7;
+}
+.dropdown-content.document-obsolete {
+	border-top: 5px solid @color9;
 }
 
 /* Special:Ask buttons */
@@ -460,7 +569,7 @@ ul.lqt-thread-toolbar-commands {
   	bottom: 0;
   	width: 100%;
   	/* Set the fixed height of the footer here */
-  	height: 145px;
+  	height: 125px;
 }
 
 .smwofooterrowtb.row {
@@ -468,10 +577,20 @@ ul.lqt-thread-toolbar-commands {
 }
 
 .smwofooterrow.row {
-	padding-top: 15px;
+	padding-top: 5px;
 	background-color: @color5;
-	margin-bottom: -15px;
 }
+
+.smwofooterrow.row div.col-lg-1,
+.smwofooterrow.row div.col-lg-10 {
+    height: 50px;
+}
+
+.smwofooterrowb.row {
+	padding-top: 5px;
+	background-color: @color5;
+}
+
 
 /* no margins for links to special pages at the bottom */
 .smwofootercomptb.col-lg-10 {
@@ -492,6 +611,10 @@ ul.lqt-thread-toolbar-commands {
 
 .list-inline.footer-places {
 	margin-left: 10px;
+}
+
+.list-inline.pull-right.footer-icons {
+	margin-bottom: 5px;
 }
 
 .footer-info.list-unstyled.small {
@@ -580,168 +703,34 @@ table.smworgtable-v2-toc {
 }
 
 /**
- * Currently less less
- */
-
-/* Style The Dropdown Button */
-.dropbtn {
-    background-color: #dcf0f7;
-    color: #5e9dc8;
-    padding: 3px 6px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    text-align: right;
-    color: #164eaf;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-outer {
-    min-width: 160px;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    font-size: 14px;
-    background-color: #ffffff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 0px;
-    left: auto;
-    right: 0;
-    border-top: 5px solid #5e9dc8;
-}
-
-@media only screen and (max-width: 480px) {
-	.dropdown-content {
-		left: -100% !important;
-		right: auto !important;
-		column-gap: 0px !important;
-	}
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: #164eaf;
-    padding: 3px 3px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    min-width: 150px;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #dcf0f7;
-    color: #5e9dc8;
-}
-
-.dropdown-content .selflink,
-.dropdown-content .selflink:hover {
-    background-color: #48c4f5;
-    color: #fff;
-    margin-left: 6px;
-    padding: 5px;
-}
-
-.dropdown-content ul {
-    list-style-type: none;
-    list-style-image: none;
-    margin: 0 10px 0 10px;
-    padding: 0 0 0 0;
-}
-
-.dropdown-content li {
-    padding: 0 0 0 0;
-}
-
-.dropdown-content li a:hover {
-    background-color: #fff;
-    color: #5e9dc8;
-    text-decoration: underline;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #5e9dc8;
-    color: #fff;
-}
-
-/**
- * Document management specific changes
- */
-
-.dropdown .dropbtn.document-draft {
-    background-color: #f7d96d;
-    color: #725b06;
-}
-
-.dropdown:hover .dropbtn.document-draft {
-    background-color: #f3c624;
-    color: #725b06;
-}
-
-.dropdown-content.document-draft {
-    border-top: 5px solid #f3c624;
-}
-
-.dropdown .dropbtn.document-obsolete {
-    background-color: #ff5656;
-    color: #510e1c;
-}
-
-.dropdown:hover .dropbtn.document-obsolete {
-    background-color: #f30000;
-    color: #510e1c;
-}
-
-.dropdown-content.document-obsolete {
-    border-top: 5px solid #f30000;
-}
-
-/**
  * Manual specific changes
  */
 .user-manual {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
-    -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
-    -moz-column-rule-style: solid; /* Firefox */
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-style: solid;
     column-rule-style: solid;
-    -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
-    -moz-column-rule-width: 1px; /* Firefox */
+    -webkit-column-rule-width: 1px;
+    -moz-column-rule-width: 1px;
     column-rule-width: 1px;
-    -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
-    -moz-column-rule: 1px solid lightblue; /* Firefox */
+    -webkit-column-rule: 1px solid lightblue;
+    -moz-column-rule: 1px solid lightblue;
     column-rule: 1px solid lightblue;
 }
-
 .admin-manual {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
-    -moz-column-rule-style: solid; /* Firefox */
+    -webkit-column-rule-style: solid;
+    -moz-column-rule-style: solid;
     column-rule-style: solid;
-    -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
-    -moz-column-rule-width: 1px; /* Firefox */
+    -webkit-column-rule-width: 1px;
+    -moz-column-rule-width: 1px;
     column-rule-width: 1px;
-    -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
-    -moz-column-rule: 1px solid lightblue; /* Firefox */
+    -webkit-column-rule: 1px solid lightblue;
+    -moz-column-rule: 1px solid lightblue;
     column-rule: 1px solid lightblue;
 }
 
@@ -749,30 +738,30 @@ table.smworgtable-v2-toc {
  * Navigation support
  */
 .manual-nav {
-    margin-top: 5px;
-}
-
-.manual-nav a {
-    background-color: #dcf0f7;
-    color: #5e9dc8;
-    padding: 3px 3px 3px 9px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    text-align: right;
-    color: #164eaf;
-    width: 15px;
-    text-align: center;
-    color: #164eaf;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.manual-nav:hover,
-.manual-nav a:hover {
-    background-color: #5e9dc8;
-    color: #fff;
-    border-radius: 3px;
+	margin-top: 5px;
+	a {
+		background-color: @color5;
+		color: @color2;
+		padding: 3px 3px 3px 9px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+		border-radius: 3px;
+		text-align: right;
+		width: 15px;
+		text-align: center;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+		&:hover {
+			background-color: @color2;
+			color: @color0;
+			border-radius: 3px;
+		}
+	}
+	&:hover {
+		background-color: @color2;
+		color: @color0;
+		border-radius: 3px;
+	}
 }
