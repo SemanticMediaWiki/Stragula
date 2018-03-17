@@ -17,6 +17,9 @@
 @color9: #f30000;
 @color10: #725b06;
 @color11: #510e1c;
+@color12: #f5f5f5;
+@color13: #d57520;
+@color14: #aaaaaa;
 
 @navbar-default-bg: @color2;
 @nav-tabs-active-link-hover-color: @color0;
@@ -60,11 +63,11 @@ hr {
 
 /* floating */
 .float-left {
-    float: left;
+	float: left;
 }
 
 .float-right {
-    float: right;
+	float: right;
 }
 
 /* table of contents */
@@ -170,7 +173,7 @@ table a:not(.btn),
 	position: absolute;
 	font-size: 14px;
 	background-color: @color0;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 8px 16px 0px rgba( 0, 0, 0, 0.2 );
 	z-index: 1;
 	border-radius: 0px;
 	left: auto;
@@ -481,7 +484,6 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 #pt-notifications-alert,
 #pt-notifications-message {
 	.mw-echo-notifications-badge {
-
 		&:hover,
 		&:active,
 		&:focus {
@@ -492,7 +494,6 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 			text-decoration: underline;
 			text-decoration-color: @color2;
 		}
-
 		font-weight: normal !important;
 	}
 }
@@ -509,7 +510,7 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 #specialchars.my-buttons {
 	p#Standard.specialbasic {
 		a {
-			background-color: #f5f5f5;
+			background-color: @color12;
 			padding: 3px;
 			text-decoration: none;
 		}
@@ -519,7 +520,6 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 }
 
 /* Liquid Threads */
-
 .lqt_header_content {
 	margin: -1em 0 1.5em;
 }
@@ -535,7 +535,7 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 }
 .lqt_post_new_message {
 	background-color: @color0 !important;
-	border: 1pt solid silver !important;
+	border: 1pt solid @color14 !important;
 	width: 99%;
 }
 .thread-collapse-control {
@@ -625,7 +625,6 @@ ul.lqt-thread-toolbar-commands {
  * Interlanguage dropdown styling
  * Styles copied from https://www.w3schools.com/css/css_dropdowns.asp
  */
-
 .icon-language {
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABnklEQVRIie3Ty4uPYRQH8M9MY9TkXjOFklsuvzIauWWKMmGpsGCHzWRFo8TWyoK1hD/AxkI2JpdkYaFMSUYWosg1C0pJGotzXj1eb4Qs1O9bp+c8zznv+Z7bSxv/O7p/5dD5lwQHcP53CVbjUspAg30yelKfjedYik0Ywb7SuashwDZMLfSxhqy3195aeJJyvzR0NGR3ER9Fdd3Ygc+FTy9mpn4Sp3Azk+rA+59VMCjKv5wEu7AhA1R4kyITWIx5WIMl2IuXlXN9BkN53kgp30r04GBW3MJ8rMADMfRDVfIlwTSsFUN7iHG8wHpMKfz6cA5z8n5GtOyOGPIwNmJ/nWAwWW/lfUK0ZpJoU+V/HPdwVMxqJxaJecAzXBFb9d0MtuS5O0XNNir63JftmcA70cIjeF34f0n7N4JZWJmPY5VRbMVAygwsxCN8Qn9+N4q7RfDpYr1vlwRDWf44DteyP41l2Iy34qc6hnV4nGSdmItV2CPW+mxJsFwM9KofcS2zauEEFuT7MF6lvjVJn+I6LuBDQ6w/RpdoVxtt/AN8BQ8WTTa0nUihAAAAAElFTkSuQmCC');
 	padding: 2px 14px;
@@ -635,6 +634,11 @@ ul.lqt-thread-toolbar-commands {
 /**
  * Misc
  */
+
+/* Fix misplacement of category links */
+#catlinks {
+	clear: right;
+}
 
 /* Fix styling of concept descriptions */
 .concept-documenation {
@@ -671,7 +675,7 @@ table.smworgtable-v2 {
 		}
 	}
 	th.smworange {
-		background-color: #d57520;
+		background-color: @color12;
 	}
 }
 table.smworgtable-v2-toc {
@@ -688,7 +692,7 @@ table.smworgtable-v2-toc {
 		font-size: 110%;
 	}
 	#toc {
-		border: 0px solid #aaaaaa;
+		border: 0px solid @color14;
 		background-color: @color0;
 		font-size: 100%;
 		width: 230px;
@@ -706,18 +710,18 @@ table.smworgtable-v2-toc {
  * Manual specific changes
  */
 .user-manual {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-rule-style: solid;
-    -moz-column-rule-style: solid;
-    column-rule-style: solid;
-    -webkit-column-rule-width: 1px;
-    -moz-column-rule-width: 1px;
-    column-rule-width: 1px;
-    -webkit-column-rule: 1px solid lightblue;
-    -moz-column-rule: 1px solid lightblue;
-    column-rule: 1px solid lightblue;
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+	-webkit-column-rule-style: solid;
+	-moz-column-rule-style: solid;
+	column-rule-style: solid;
+	-webkit-column-rule-width: 1px;
+	-moz-column-rule-width: 1px;
+	column-rule-width: 1px;
+	-webkit-column-rule: 1px solid @color5;
+	-moz-column-rule: 1px solid @color5;
+	column-rule: 1px solid @color5;
 }
 
 @media only screen and (max-width: 480px) {
@@ -729,18 +733,18 @@ table.smworgtable-v2-toc {
 }
 
 .admin-manual {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-rule-style: solid;
-    -moz-column-rule-style: solid;
-    column-rule-style: solid;
-    -webkit-column-rule-width: 1px;
-    -moz-column-rule-width: 1px;
-    column-rule-width: 1px;
-    -webkit-column-rule: 1px solid lightblue;
-    -moz-column-rule: 1px solid lightblue;
-    column-rule: 1px solid lightblue;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-rule-style: solid;
+	-moz-column-rule-style: solid;
+	column-rule-style: solid;
+	-webkit-column-rule-width: 1px;
+	-moz-column-rule-width: 1px;
+	column-rule-width: 1px;
+	-webkit-column-rule: 1px solid @color5;
+	-moz-column-rule: 1px solid @color5;
+	column-rule: 1px solid @color5;
 }
 
 /**
@@ -773,12 +777,4 @@ table.smworgtable-v2-toc {
 		color: @color0;
 		border-radius: 3px;
 	}
-}
-
-/**
- * Trick to keep the categories section at the bottom of all content
- */
-
-#catlinks {
-	clear: right;
 }
