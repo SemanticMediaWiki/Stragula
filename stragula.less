@@ -48,7 +48,7 @@ html {
 
 body {
 	/* Margin bottom by footer height see also ".smwofootergrid.container" */
-	margin-bottom: 125px;
+	margin-bottom: 117px;
 }
 
 /* fix gap between header and content */
@@ -574,6 +574,12 @@ ul.lqt-thread-toolbar-commands {
 	}
 }
 
+/* Translate */
+// Chrome ignores font-size: x-small
+.mw-pt-translate-header {
+    font-size: 10px;
+}
+
 /**
  * Footer
  */
@@ -582,11 +588,7 @@ ul.lqt-thread-toolbar-commands {
 	bottom: 0;
   	width: 100%;
   	/* Set the fixed height of the footer here */
-  	height: 125px;
-}
-
-.smwofooterrowtb.row {
-	background-color: @color2;
+  	height: 117px;
 }
 
 .smwofooterrow.row {
@@ -594,14 +596,16 @@ ul.lqt-thread-toolbar-commands {
 	background-color: @color5;
 }
 
-.smwofooterrow.row div.col-lg-1,
-.smwofooterrow.row div.col-lg-10 {
-    height: 50px;
+.smwofooterrowb.row {
+	background-color: @color5;
 }
 
-.smwofooterrowb.row {
-	padding-top: 5px;
-	background-color: @color5;
+.smwofooterrowtb.row {
+	background-color: @color2;
+}
+
+.footer-info.list-unstyled.small {
+        margin-bottom: 0;
 }
 
 
@@ -609,7 +613,7 @@ ul.lqt-thread-toolbar-commands {
 .smwofootercomptb.col-lg-10 {
 	nav#p-tb.navbar.navbar-default.p-tb {
 		margin-top: 0;
-		margin-bottom: -15px;
+		margin-bottom: 0;
 	}
 }
 
