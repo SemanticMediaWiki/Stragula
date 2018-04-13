@@ -429,7 +429,7 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 	}
 }
 
-/* navbar - personal tools -universal language selector */
+/* navbar - personal tools - universal language selector */
 #pt-uls {
 	padding-left: 20px;
 	a.uls-trigger {
@@ -577,7 +577,13 @@ ul.lqt-thread-toolbar-commands {
 /* Translate */
 // Chrome ignores font-size: x-small
 .mw-pt-translate-header {
-    font-size: 10px;
+    font-size: 10px !important;
+}
+
+@media only screen and (max-width: 480px) {
+	.mw-pt-translate-header {
+		display: none !important;
+	}
 }
 
 /**
