@@ -7,12 +7,13 @@ $egChameleonLayoutFile = __DIR__ . '/skins/Stragula/stragula.xml';
 $egChameleonExternalStyleModules = [
 	__DIR__ . '/skins/Stragula/bootswatch.less' => $wgScriptPath,
 	__DIR__ . '/skins/Stragula/variables.less' => $wgScriptPath,
-	__DIR__ . '/skins/Stragula/stragula.less' => $wgScriptPath
+	__DIR__ . '/skins/Stragula/stragula.less' => $wgScriptPath,
+	__DIR__ . '/skins/Stragula/smworg.less' => $wgScriptPath
 	];
 $egChameleonExternalLessVariables = [
-	'font-size-base' => '16px',
-	'font-size-large' => '18px',
-	'font-size-small' => '14px',
+	'font-size-base' => '17px',
+	'font-size-large' => '19px',
+	'font-size-small' => '15px',
 	'font-size-h1' => '28px',
 	'font-size-h2' => '24px',
 	'font-size-h3' => '20px',
