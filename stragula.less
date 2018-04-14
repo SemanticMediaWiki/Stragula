@@ -62,6 +62,7 @@ body {
 hr {
 	margin-top: 10px;
 	margin-bottom: 10px;
+	border: 0 !important;
 }
 
 /* floating */
@@ -96,9 +97,15 @@ hr {
 	}
 }
 
+#toctitle {
+	display: none;
+}
+
+
 /* pre */
 div.smwpre {
 	padding: 0.5em !important;
+	font-size: 0.8em !important
 }
 
 /* EditTools */
@@ -300,9 +307,29 @@ a.smw-ask-action-btn-dblue {
 	}
 }
 
+
+/* Special:Search */
+
+/* Special:Search - result list */
+.searchresults .mw-search-results {
+	padding-left: 0;
+}
+
+/* Special:Search - input field */
+#searchText {
+	width: 70%;
+}
+
+
 /**
  * navbar
  */
+
+.navbar-nav {
+	>li {
+		padding-top: 0.5px;
+	}
+}
 
 .navbar-default .navbar-nav > li > a {
 	&:hover,
@@ -319,6 +346,12 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 .navbar.navbar-default.p-tb {
 	border: none;
 }
+
+/* Edit & history drop-down */
+.navbar-tools-tools {
+	margin-top: 1px;
+}
+
 
 /* navbar - search button */
 .btn-default {
@@ -401,29 +434,32 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 }
 
 /* navbar - personal tools - wide screen and narrow screen */
-.skin-chameleon .navbar-tools {
-	.open > a {
-		&,
-		&:hover,
-		&:focus {
-			background-color: @color3;
-		}
-	}
-
-	> li,
-	> li.open {
-		> a.navbar-userloggedin {
-
-			&:active {
-				color: @color4;
-			}
-
-			&:hover {
-				background-color: @color4;
-			}
-
+.skin-chameleon {
+	.navbar-tools {
+		.open > a {
+			&,
+			&:hover,
 			&:focus {
 				background-color: @color3;
+			}
+		}
+		>li,
+		li.open {
+			&:first-child {
+				>ul.dropdown-menu {
+					margin-top: 0.5px;
+				}
+			}
+			> a.navbar-userloggedin {
+				&:active {
+					color: @color4;
+				}
+				&:hover {
+					background-color: @color4;
+				}
+				&:focus {
+					background-color: @color3;
+				}
 			}
 		}
 	}
@@ -522,6 +558,11 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 	line-height: 1.8em;
 }
 
+/* DissmissableSiteNotice */
+.sitedir-ltr .mw-dismissable-notice-body {
+	margin: 0.5em 8% 0.5em 5em;
+}
+
 /* Liquid Threads */
 .lqt_header_content {
 	margin: -1em 0 1.5em;
@@ -560,9 +601,11 @@ ul.lqt-thread-toolbar-commands {
 }
 
 /* Semantic Cite */
+/* FIXME - Wait until the 1.4.0 release
 .scite-citation-resourcelink a:before {
 	content: "↘";
 }
+*/
 
 /* Semantic Result Formats */
 // FIXME: .srf-tree should be handled in SRF
@@ -575,15 +618,13 @@ ul.lqt-thread-toolbar-commands {
 }
 
 /* Translate */
-// Chrome ignores font-size: x-small
-.mw-pt-translate-header {
-    font-size: 10px !important;
-}
 
-@media only screen and (max-width: 480px) {
-	.mw-pt-translate-header {
-		display: none !important;
-	}
+/* Use "Special:PageTranslation" instead */
+.mw-pt-translate-header {
+	display: none;
+	/* font-size: 10px !important; // Chrome ignores font-size: x-small */
+	/* margin-top: -3em; */
+	/* text-align: right; */
 }
 
 /**
@@ -657,6 +698,21 @@ ul.lqt-thread-toolbar-commands {
 /**
  * Misc
  */
+
+/* Glyphicons */
+.glyphicon-search {
+	top: 4px;
+}
+
+.glyphicon-pencil {
+	top: 0px;
+   	font-size: 80%;
+}
+
+/* oo-ui button */
+button.oo-ui-inputWidget-input {
+	padding: 0.35em 1em !important;
+}
 
 /* Fix misplacement of category links */
 #catlinks {
