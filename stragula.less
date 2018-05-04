@@ -262,7 +262,12 @@ table a:not(.btn),
 	border-top: 5px solid @color9;
 }
 
-/* Special:Ask buttons */
+
+/**
+ * Special pages
+ */
+
+/* Special:Ask - buttons */
 .smw-ask-action-btn-lblue {
 	color: @color0 !important;
 	background-color: @navbar-default-bg !important;
@@ -313,9 +318,6 @@ a.smw-ask-action-btn-dblue {
 	}
 }
 
-
-/* Special:Search */
-
 /* Special:Search - result list */
 .searchresults .mw-search-results {
 	padding-left: 0;
@@ -357,7 +359,6 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 .navbar-tools-tools {
 	margin-top: 1px;
 }
-
 
 /* navbar - search button */
 .btn-default {
@@ -471,29 +472,96 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 	}
 }
 
-/* navbar - personal tools - universal language selector */
-#pt-uls {
-	padding-left: 20px;
-	a.uls-trigger {
-		padding: 10px 0 10px 40px !important;
+
+/**
+ * Extensions
+ */
+
+/* CharInsert */
+#specialchars.my-buttons {
+	p#Standard.specialbasic {
+		a {
+			background-color: @color12;
+			padding: 3px;
+			text-decoration: none;
+		}
+		margin: 10px 10px 10px 0;
+	}
+	line-height: 1.8em;
+}
+
+/* DissmissableSiteNotice */
+.sitedir-ltr .mw-dismissable-notice-body {
+	margin: 0.5em 8% 0.5em 5em;
+}
+
+/* Echo - navbar - personal tools */
+#pt-notifications-alert,
+#pt-notifications-message {
+	.mw-echo-notifications-badge {
+		&:hover,
+		&:active,
+		&:focus {
+			-moz-outline-style: none;
+			outline: none;
+			background-color: @color0;
+			color: @color3;
+			text-decoration: underline;
+			text-decoration-color: @color2;
+		}
+		font-weight: normal !important;
 	}
 }
 
-#pt-uls.active a {
-	background-color: @color0;
-	color: @color2;
-	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		color: @color3;
-		text-decoration: underline;
-		text-decoration-color: @color2;
-		background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2227%22%20height%3D%2216%22%3E%3Cpath%20fill%3D%22%23D3E3F4%22%20d%3D%22M0%200h11.876v16h-11.876v-16z%22%2F%3E%3Cpath%20fill%3D%22%23E9E9E9%22%20d%3D%22M12.819%200v15.969h10.755c1.085-2.578%201.837-4.991%203.062-8.591l-3.062-7.378h-10.755z%22%2F%3E%3Cpath%20fill%3D%22%23434343%22%20d%3D%22M14.828%204.146c.32.023.639.035.951.035.471%200%20.922-.016%201.354-.046l.023-.258.034-.367.081-.711.033-.333.873.058c-.073.577-.133%201.091-.179%201.542%201.116-.119%202.233-.331%203.349-.637l.092.809c-1.078.271-2.251.472-3.521.602-.05.463-.082.968-.098%201.514.524-.187%201.14-.313%201.847-.378.064-.207.136-.461.213-.763l.865.201c-.027.123-.088.315-.184.579.814.104%201.461.34%201.938.711.681.542%201.021%201.252%201.021%202.128%200%20.963-.406%201.746-1.221%202.351-.635.47-1.505.784-2.609.94l-.505-.779c.968-.104%201.739-.337%202.317-.7.733-.458%201.101-1.066%201.101-1.823%200-.772-.341-1.363-1.021-1.772-.345-.21-.764-.344-1.256-.401-.604%201.422-1.4%202.598-2.387%203.527.035.352.102.715.201%201.09l-.849.314-.126-.773c-.654.462-1.27.693-1.847.693-.696%200-1.044-.407-1.044-1.222%200-1.104.591-2.103%201.771-2.993.227-.165.532-.352.918-.562.012-.524.046-1.128.104-1.812-.585.046-1.143.069-1.675.069l-.493-.011-.071-.822m2.127%203.384c-.268.161-.545.392-.831.694-.612.619-.94%201.226-.986%201.817l-.017.121.017.138c0%20.252.112.378.339.378.492%200%201.02-.258%201.582-.773-.057-.613-.092-1.404-.104-2.375m2.455-.884c-.57.08-1.111.226-1.623.436%200%20.883.018%201.581.052%202.093.634-.707%201.158-1.55%201.571-2.529%22%2F%3E%3Cpath%20fill%3D%22%231A1A1A%22%20d%3D%22M8.517%2011.735l-.734-2.409h-3.69l-.734%202.409h-2.313l3.573-10.165h2.625l3.587%2010.165h-2.314m-1.246-4.21c-.679-2.183-1.062-3.418-1.149-3.704-.083-.286-.143-.512-.18-.678-.153.59-.589%202.051-1.309%204.382h2.638%22%2F%3E%3Cpath%20fill%3D%22%23BCBCBC%22%20d%3D%22M12.817%2013.5v2.5h10.757l.98-2.5h-11.737z%22%2F%3E%3Cpath%20fill%3D%22%233692D0%22%20d%3D%22M.011%2013.511h3.569l2.367-3.116%202.367%203.116h3.57v2.484h-11.873v-2.484z%22%2F%3E%3C%2Fsvg%3E) !important;
-	}
+#pt-notifications-message .mw-echo-notifications-badge {
+	margin-left: 0 !important;
 }
 
-/* navbar - personal tools - liquid threads */
+/* Liquid Threads */
+.lqt_header_content {
+	margin: -1em 0 1.5em;
+}
+.lqt-talkpage-header {
+	background-color: @color2 !important;
+}
+
+.lqt_toc {
+	border-collapse: collapse;
+	width: 100% !important;
+}
+.lqt-post-wrapper {
+	background: none repeat scroll 0 0 @color0;
+}
+.lqt_post_new_message {
+	background-color: @color0 !important;
+	border: 1pt solid @color14 !important;
+	width: 99%;
+}
+.thread-collapse-control {
+	a {
+		background: url(data:image/gif;base64,R0lGODlhEQAOAMQAAISEhMvLy1FRUXFxcVRUVGpqal1dXebm5tLS0tjY2MTExOHh4Z+fn7GxsY+Pj6+vr7q6uuTk5JSUlHt7e5aWlqioqFhYWE9PT2NjY93d3Z2dnU1NTejo6AAAAAAAAAAAACH5BAAAAAAALAAAAAARAA4AAAVJICJsZGmaEyedLCkgXGa1J8XdFV0ay80dBd3m4bspdIVD8QagKZa3BIEFgPo0J0LCelsYTAyur1HCRMS+AQmC9gUug3bREbCGAAA7) no-repeat scroll 0 0 transparent;
+	}
+}
+a.thread-control-collapsed {
+	background: url(data:image/gif;base64,R0lGODlhDgARAMQAAISEhMvLy1FRUXFxcVRUVGpqal1dXebm5tLS0tjY2MTExOHh4Z+fn7GxsY+Pj6+vr7q6uuTk5JSUlHt7e5aWlqioqFhYWE9PT2NjY93d3Z2dnU1NTejo6AAAAAAAAAAAACH5BAAAAAAALAAAAAAOABEAAAVG4IRwZGmSm0At57m9xnO06PsWCm3vQOLuNgIjUgICMZCacTcILIEXx9PW5EwNjaKRoGFpeb7fLafbWCozGkcgyahLo3cpBAA7) no-repeat scroll 0 0 transparent;
+}
+ul.lqt-thread-toolbar-commands {
+	list-style-type: none !important;
+	list-style-image: none !important;
+}
+
+.lqt_header_content {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.lqt_start_discussion a,
+.lqt_start_discussion a:hover {
+	color: #ffffff;
+	padding-right: 10px;
+}
+
+/* Liquid Threads - navbar - personal tools */
 #pt-newmessages {
 	a {
 		background-color: @color0;
@@ -523,82 +591,6 @@ a.dropdown-toggle.navbar-userloggedin span.glyphicon.glyphicon-user {
 			text-decoration-color: @color2;
 		}
 	}
-}
-
-/* Echo - navbar - personal tools */
-#pt-notifications-alert,
-#pt-notifications-message {
-	.mw-echo-notifications-badge {
-		&:hover,
-		&:active,
-		&:focus {
-			-moz-outline-style: none;
-			outline: none;
-			background-color: @color0;
-			color: @color3;
-			text-decoration: underline;
-			text-decoration-color: @color2;
-		}
-		font-weight: normal !important;
-	}
-}
-
-#pt-notifications-message .mw-echo-notifications-badge {
-	margin-left: 0 !important;
-}
-
-/**
- * Extensions
- */
-
-/* CharInsert */
-#specialchars.my-buttons {
-	p#Standard.specialbasic {
-		a {
-			background-color: @color12;
-			padding: 3px;
-			text-decoration: none;
-		}
-		margin: 10px 10px 10px 0;
-	}
-	line-height: 1.8em;
-}
-
-/* DissmissableSiteNotice */
-.sitedir-ltr .mw-dismissable-notice-body {
-	margin: 0.5em 8% 0.5em 5em;
-}
-
-/* Liquid Threads */
-.lqt_header_content {
-	margin: -1em 0 1.5em;
-}
-.lqt-talkpage-header {
-	background-color: @color5 !important;
-}
-.lqt_toc {
-	border-collapse: collapse;
-	width: 100% !important;
-}
-.lqt-post-wrapper {
-	background: none repeat scroll 0 0 @color0;
-}
-.lqt_post_new_message {
-	background-color: @color0 !important;
-	border: 1pt solid @color14 !important;
-	width: 99%;
-}
-.thread-collapse-control {
-	a {
-		background: url(data:image/gif;base64,R0lGODlhEQAOAMQAAISEhMvLy1FRUXFxcVRUVGpqal1dXebm5tLS0tjY2MTExOHh4Z+fn7GxsY+Pj6+vr7q6uuTk5JSUlHt7e5aWlqioqFhYWE9PT2NjY93d3Z2dnU1NTejo6AAAAAAAAAAAACH5BAAAAAAALAAAAAARAA4AAAVJICJsZGmaEyedLCkgXGa1J8XdFV0ay80dBd3m4bspdIVD8QagKZa3BIEFgPo0J0LCelsYTAyur1HCRMS+AQmC9gUug3bREbCGAAA7) no-repeat scroll 0 0 transparent;
-	}
-}
-a.thread-control-collapsed {
-	background: url(data:image/gif;base64,R0lGODlhDgARAMQAAISEhMvLy1FRUXFxcVRUVGpqal1dXebm5tLS0tjY2MTExOHh4Z+fn7GxsY+Pj6+vr7q6uuTk5JSUlHt7e5aWlqioqFhYWE9PT2NjY93d3Z2dnU1NTejo6AAAAAAAAAAAACH5BAAAAAAALAAAAAAOABEAAAVG4IRwZGmSm0At57m9xnO06PsWCm3vQOLuNgIjUgICMZCacTcILIEXx9PW5EwNjaKRoGFpeb7fLafbWCozGkcgyahLo3cpBAA7) no-repeat scroll 0 0 transparent;
-}
-ul.lqt-thread-toolbar-commands {
-	list-style-type: none !important;
-	list-style-image: none !important;
 }
 
 /* Semantic MediaWiki */
@@ -632,6 +624,29 @@ ul.lqt-thread-toolbar-commands {
 	/* margin-top: -3em; */
 	/* text-align: right; */
 }
+
+/* Universal language selector - navbar - personal tools */
+#pt-uls {
+	padding-left: 20px;
+	a.uls-trigger {
+		padding: 10px 0 10px 40px !important;
+	}
+}
+
+#pt-uls.active a {
+	background-color: @color0;
+	color: @color2;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: @color3;
+		text-decoration: underline;
+		text-decoration-color: @color2;
+		background-image: linear-gradient(transparent, transparent), url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2227%22%20height%3D%2216%22%3E%3Cpath%20fill%3D%22%23D3E3F4%22%20d%3D%22M0%200h11.876v16h-11.876v-16z%22%2F%3E%3Cpath%20fill%3D%22%23E9E9E9%22%20d%3D%22M12.819%200v15.969h10.755c1.085-2.578%201.837-4.991%203.062-8.591l-3.062-7.378h-10.755z%22%2F%3E%3Cpath%20fill%3D%22%23434343%22%20d%3D%22M14.828%204.146c.32.023.639.035.951.035.471%200%20.922-.016%201.354-.046l.023-.258.034-.367.081-.711.033-.333.873.058c-.073.577-.133%201.091-.179%201.542%201.116-.119%202.233-.331%203.349-.637l.092.809c-1.078.271-2.251.472-3.521.602-.05.463-.082.968-.098%201.514.524-.187%201.14-.313%201.847-.378.064-.207.136-.461.213-.763l.865.201c-.027.123-.088.315-.184.579.814.104%201.461.34%201.938.711.681.542%201.021%201.252%201.021%202.128%200%20.963-.406%201.746-1.221%202.351-.635.47-1.505.784-2.609.94l-.505-.779c.968-.104%201.739-.337%202.317-.7.733-.458%201.101-1.066%201.101-1.823%200-.772-.341-1.363-1.021-1.772-.345-.21-.764-.344-1.256-.401-.604%201.422-1.4%202.598-2.387%203.527.035.352.102.715.201%201.09l-.849.314-.126-.773c-.654.462-1.27.693-1.847.693-.696%200-1.044-.407-1.044-1.222%200-1.104.591-2.103%201.771-2.993.227-.165.532-.352.918-.562.012-.524.046-1.128.104-1.812-.585.046-1.143.069-1.675.069l-.493-.011-.071-.822m2.127%203.384c-.268.161-.545.392-.831.694-.612.619-.94%201.226-.986%201.817l-.017.121.017.138c0%20.252.112.378.339.378.492%200%201.02-.258%201.582-.773-.057-.613-.092-1.404-.104-2.375m2.455-.884c-.57.08-1.111.226-1.623.436%200%20.883.018%201.581.052%202.093.634-.707%201.158-1.55%201.571-2.529%22%2F%3E%3Cpath%20fill%3D%22%231A1A1A%22%20d%3D%22M8.517%2011.735l-.734-2.409h-3.69l-.734%202.409h-2.313l3.573-10.165h2.625l3.587%2010.165h-2.314m-1.246-4.21c-.679-2.183-1.062-3.418-1.149-3.704-.083-.286-.143-.512-.18-.678-.153.59-.589%202.051-1.309%204.382h2.638%22%2F%3E%3Cpath%20fill%3D%22%23BCBCBC%22%20d%3D%22M12.817%2013.5v2.5h10.757l.98-2.5h-11.737z%22%2F%3E%3Cpath%20fill%3D%22%233692D0%22%20d%3D%22M.011%2013.511h3.569l2.367-3.116%202.367%203.116h3.57v2.484h-11.873v-2.484z%22%2F%3E%3C%2Fsvg%3E) !important;
+	}
+}
+
 
 /**
  * Footer
@@ -723,6 +738,11 @@ button.oo-ui-inputWidget-input {
 /* Fix misplacement of category links */
 #catlinks {
 	clear: right;
+}
+
+/* Fix margin of successbox margins */
+.successbox p {
+	margin: 0;
 }
 
 /* Fix styling of concept descriptions */
