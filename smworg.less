@@ -128,6 +128,19 @@
 	text-align: center;
 }
 
+/* Avoids wasted space on the right and left */
+@media only screen and (max-width: 480px) {
+    .smwomp {
+        padding: 20px 30px;
+        margin-left: -35px;
+        margin-right: -35px;
+    }
+    .smwompl {
+        margin-left: -35px;
+        margin-right: -35px;
+    }
+}
+
 /**
  * Adaptions for the main table class
  */
@@ -555,4 +568,34 @@ table.smworgtable-v2-toc {
 	background: -ms-linear-gradient(-45deg, rgba(249,198,103,1) 0%,rgba(247,150,33,1) 100%);
 	background: linear-gradient(135deg, rgba(249,198,103,1) 0%,rgba(247,150,33,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f79621',GradientType=1 );
+}
+
+/**
+ * Compatibility page
+ */
+
+table.compatibility td,
+table.compatibility th {
+	padding: 0 10px;
+	border-bottom: 1px dotted #0c2c52;
+}
+
+table.compatibility {
+	display: block;
+	overflow: auto;
+	width: 100%;
+}
+
+table.compatibility tr {
+	background-color: #fff;
+	border-top: 1px solid #c6cbd1;
+}
+
+table.compatibility tr:nth-child(2n) {
+	background-color: #f6f8fa;
+}
+
+table.compatibility td, table.compatibility th {
+	border: 1px solid #dfe2e5;
+	padding: 6px 13px;
 }

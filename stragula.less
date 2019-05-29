@@ -59,6 +59,12 @@ body {
 	overflow-anchor: none;
 }
 
+/* Without this, a paragraph glues to a ul/ol list*/
+#bodyContent ol,
+#bodyContent ul {
+	margin-bottom: 12.5px !important;
+}
+
 /* fix gap between header and content */
 .contentHeader {
 	margin: 0 0 0.5em;
@@ -72,11 +78,28 @@ body {
 	color: @color15;
 }
 
+/* Avoids navbar overlaps section headings 
+ * https://www.mediawiki.org/wiki/Topic:Usefjbfrti0hfg45
+ */
+.mw-headline[id]::before {
+	display: block;
+	content: " ";
+	margin-top: -32px;
+	height: 32px;
+	visibility: hidden;
+}
+
 /* horizontal lines */
 hr {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 0 !important;
+}
+
+/* level 4 heading */
+h4,
+.h4 {
+    font-size: 19px;
 }
 
 /* floating */
@@ -120,6 +143,10 @@ hr {
 div.smwpre {
 	padding: 0.5em !important;
 	font-size: 0.8em !important
+}
+
+.smwb-value div.smwpre div {
+	min-height: 1.1em !important;
 }
 
 /* EditTools */
@@ -626,7 +653,8 @@ ul.lqt-thread-toolbar-commands {
 
 /** Semantic Cite
  * Unconfuse link to subobject
- */.scite-citation-resourcelink a:before {
+ */
+.scite-citation-resourcelink a:before {
 	content: "↘";
 }
 
@@ -672,6 +700,10 @@ ul.lqt-thread-toolbar-commands {
 	}
 }
 
+/* Wikieditor - special character selectors */
+.wikiEditor-ui-toolbar .page-characters div span {
+	height: 1.5em;
+}
 
 /**
  * Footer
