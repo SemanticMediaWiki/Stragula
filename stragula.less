@@ -611,7 +611,7 @@ ul.lqt-thread-toolbar-commands {
 
 	&.active a {
 
-		// FIXME: Colors should already be covered by #pt-newmessages a
+		/* FIXME: Colors should already be covered by #pt-newmessages a */
 		background-color: @color0;
 		color: @color2;
 
@@ -621,7 +621,7 @@ ul.lqt-thread-toolbar-commands {
 		&:focus {
 			color: @color3;
 
-			// FIXME: Should already be covered by #pt-newmessages a
+			/* FIXME: Should already be covered by #pt-newmessages a */
 			text-decoration: underline;
 			text-decoration-color: @color2;
 		}
@@ -655,7 +655,7 @@ ul.lqt-thread-toolbar-commands {
  * Unconfuse link to subobject
  */
 .scite-citation-resourcelink a:before {
-	content: "↘";
+	content: "↘" !important;
 }
 
 /* Semantic Result Formats */
@@ -702,7 +702,7 @@ ul.lqt-thread-toolbar-commands {
 
 /* Wikieditor - special character selectors */
 .wikiEditor-ui-toolbar .page-characters div span {
-	height: 1.5em;
+	height: 1.5em !important;
 }
 
 /**
@@ -711,9 +711,9 @@ ul.lqt-thread-toolbar-commands {
 .smwofootergrid.container {
 	position: absolute;
 	bottom: 0;
-  	width: 100%;
-  	/* Set the fixed height of the footer here */
-  	height: 117px;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 117px;
 }
 
 .smwofooterrow.row {
@@ -784,7 +784,7 @@ ul.lqt-thread-toolbar-commands {
 
 .glyphicon-pencil {
 	top: 0px;
-   	font-size: 80%;
+	font-size: 80%;
 }
 
 /* oo-ui button */
